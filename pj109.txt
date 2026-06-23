@@ -1,0 +1,7 @@
+A shot can lead to 62 different results (singles, doubles and trebles included).
+If we checkout with 3 shots, the last one is a double. The two first form a combination with repetition : meaning we take (maybe with repetitions) two elements from a list of 62 elements and the order doesn't matter (it's like dominos where we take two elements from a list of 7 elements).
+
+And there's an elegant way to generate a combination with repetition with bars and stars. For example the code for the domino {4,6} is '||||*||*'. The code for the domino {2,2} is '||**||||'. This way, each domino can be encoded into 6 bars and 2 stars.
+In our problem, we can generate the two first shots by encoding them with 61 bars and 2 stars using recursion. Then we decode the string we get into a score. We do all that with a certain double for the last shot, and we change it.
+
+We repeat that process with 1 then 0 shots before the final double.

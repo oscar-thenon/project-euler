@@ -1,0 +1,71 @@
+[code=Python]from sympy import isprime
+
+def count9(d):
+    """Returns S(10,d) where d in [0,10]\{0,2,8}"""
+    s = 0
+    for a in range(10):
+        for ia in range(10):
+            candidatel = [d for i in range(10)]
+            candidatel[ia] = str(a)
+            if candidatel[0] != '0':
+                candidates = ""
+                for c in candidatel:
+                    candidates += c
+                candidate = int(candidates)
+                if isprime(candidate):
+                    s += candidate
+    return s
+
+def count8(d):
+    """Returns S(10,d) where d in {0,2,8}"""
+    s = 0
+    for a in range(10): # first non-d number
+        for b in range(10): # second non-d number
+            for ia in range(10):
+                for ib in range(ia):
+                    candidatel = [d for i in range(10)]
+                    candidatel[ia],candidatel[ib] = str(a),str(b)
+                    if candidatel[0] != '0':
+                        candidates = ""
+                        for c in candidatel:
+                            candidates += c
+                        candidate = int(candidates)
+                        if isprime(candidate):
+                            s += candidate
+    return s
+
+
+S = 0
+for d in range(10):
+    if (d==0) or (d==2) or (d==8):
+        S += count8(str(d))
+    else:
+        S += count9(str(d))
+
+print(S)[/code]
+Execution time : 75ms - but knowing a few results.
+
+Not very difficult if one has a good isprime function.
+
+I checked if it exists one anagram of x999999999 that is prime. Turns out that 9199999999 is prime, hence M(10,9)=9.
+With the same method, we can show that M(10,d)=9 if d is in {1,3,4,5,6,7,9} and 8 otherwise.
+Then we sum all primes which are anagrams of x999999999, obtaining S(10,9) - same with d in {1,3,4,5,6,7,9} -.
+Then we sum all primes which are anagrams of xx88888888, obtaining S(10,8) - same with d in {0,2,8} -.
+
+And that's it. 
+
+For the record :
+
+d	M(10,d)	N(10,d)	S(10,d)
+0	8	8	38000000042
+1	9	11	12882626601
+2	8	39	97447914665
+3	9	7	23234122821
+4	9	1	4444444447
+5	9	1	5555555557
+6	9	1	6666666661
+7	9	9	59950904793
+8	8	32	285769942206
+9	9	8	78455389922
+		SUM	612407567715
+

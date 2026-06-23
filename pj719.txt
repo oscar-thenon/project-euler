@@ -1,0 +1,261 @@
+=== THEOREMES
+
+=== THEOREME 1 : Soit d(l) le nombre de décompositions d'un nombre de taille l>=2. Alors d(l) = 1+d(1)+...+d(l-1)
+
+=== THEOREME 2 : d(l) = 2^(l-1) pour tout l>=1 (sans compter les éventuels doublons)
+
+=== THEOREME 3 : Soit n<10^12 de longueur 2l. Alors au moins un terme de la décomposition doit être de longueur au moins l-1.
+ie :
+2l, l , Taille minimale du plus grand terme
+2 , 1 , 0
+4 , 2 , 1
+6 , 3 , 2
+8 , 4 , 3
+10 , 5 , 4
+12 , 6 , 5
+
+=== THEOREME 4 : Soit n<10^12 de longueur 2l. Alors au moins un terme de la décomposition doit être de longueur l.
+C'est un résultat plus fort que le théorème 3.
+
+=== PROPOSITION 1 : Soit n = r². Avec n de longueur 2l. Alors r est de longueur l.
+
+=== PROPOSITION 2 : Soit n = r². Avec n de longueur 2l+1. Alors r est de longueur l+1.
+
+=== THEOREME 5 : Soit n<10^12 de longueur 2l+1. Alors au moins un terme de la décomposition doit être de longueur au moins l.
+REM : "de longueur l+1" est par contre faux. Contre-exemple : 1679616 , 1296 , [1, 679, 616]
+
+
+
+Des exemples de S-numbers (racine carrée <= 10^4)
+
+S-number , Racine , Décomposition
+1 , 1 , [1]
+81 , 9 , [8, 1]
+100 , 10 , [10, 0]
+1296 , 36 , [1, 29, 6]
+2025 , 45 , [20, 25]
+3025 , 55 , [30, 25]
+6724 , 82 , [6, 72, 4]
+8281 , 91 , [8, 2, 81]
+9801 , 99 , [98, 0, 1]
+10000 , 100 , [100, 0, 0]
+55225 , 235 , [5, 5, 225]
+88209 , 297 , [88, 209]
+136161 , 369 , [1, 361, 6, 1]
+136900 , 370 , [1, 369, 0, 0]
+143641 , 379 , [14, 364, 1]
+171396 , 414 , [17, 1, 396]
+431649 , 657 , [4, 3, 1, 649]
+455625 , 675 , [45, 5, 625]
+494209 , 703 , [494, 209]
+571536 , 756 , [5, 715, 36]
+627264 , 792 , [62, 726, 4]
+826281 , 909 , [826, 2, 81]
+842724 , 918 , [842, 72, 4]
+893025 , 945 , [8, 930, 2, 5]
+929296 , 964 , [929, 29, 6]
+980100 , 990 , [980, 10, 0]
+982081 , 991 , [982, 0, 8, 1]
+998001 , 999 , [998, 0, 0, 1]
+1000000 , 1000 , [1000, 0, 0, 0]
+1679616 , 1296 , [1, 679, 616]
+2896804 , 1702 , [2, 896, 804]
+3175524 , 1782 , [3, 1755, 24]
+4941729 , 2223 , [494, 1729]
+7441984 , 2728 , [744, 1984]
+11329956 , 3366 , [11, 3299, 56]
+13293316 , 3646 , [1, 329, 3316]
+13557124 , 3682 , [1, 3557, 124]
+17073424 , 4132 , [1, 707, 3424]
+23804641 , 4879 , [238, 0, 4641]
+24068836 , 4906 , [2, 4068, 836]
+24502500 , 4950 , [2450, 2500]
+25502500 , 5050 , [25, 5025, 0, 0]
+26512201 , 5149 , [26, 5122, 0, 1]
+28005264 , 5292 , [28, 0, 0, 5264]
+46676224 , 6832 , [46, 6762, 24]
+51710481 , 7191 , [5, 1, 7104, 81]
+52881984 , 7272 , [5288, 1984]
+54597321 , 7389 , [5, 4, 59, 7321]
+56746089 , 7533 , [56, 7460, 8, 9]
+56896849 , 7543 , [5, 689, 6849]
+57562569 , 7587 , [5, 7562, 5, 6, 9]
+60481729 , 7777 , [6048, 1729]
+63297936 , 7956 , [6, 3, 2, 9, 7936]
+70829056 , 8416 , [70, 8290, 56]
+71284249 , 8443 , [7, 1, 2, 8424, 9]
+76860289 , 8767 , [76, 8602, 89]
+78428736 , 8856 , [78, 42, 8736]
+79388100 , 8910 , [7, 93, 8810, 0]
+79887844 , 8938 , [7, 9, 8878, 44]
+84787264 , 9208 , [8478, 726, 4]
+86769225 , 9315 , [8, 6, 76, 9225]
+86955625 , 9325 , [8695, 5, 625]
+91891396 , 9586 , [9189, 1, 396]
+92563641 , 9621 , [9256, 364, 1]
+92929600 , 9640 , [9, 29, 2, 9600]
+95355225 , 9765 , [9535, 5, 225]
+98029801 , 9901 , [98, 0, 2, 9801]
+98188281 , 9909 , [9818, 8, 2, 81]
+98366724 , 9918 , [9836, 6, 72, 4]
+98903025 , 9945 , [9890, 30, 25]
+99102025 , 9955 , [9910, 20, 25]
+99281296 , 9964 , [9928, 1, 29, 6]
+99800100 , 9990 , [9980, 0, 10, 0]
+99820081 , 9991 , [9982, 0, 0, 8, 1]
+99980001 , 9999 , [9998, 0, 0, 0, 1]
+100000000 , 10000 , [10000, 0, 0, 0, 0]
+
+=== CONJECTURE (FAUSSE) 1 : au moins un terme de la décomposition doit avoir le même nombre de chiffres que la racine
+C'est FAUX : 1679616 , 1296 , [1, 679, 616]
+(mais ça a l'air vrai dans la grande majorité des cas)
+
+=== CONJECTURE 2 : la longueur du plus long terme doit être la même que celle de la racine, OU BIEN diminué d'une unité.
+C'est vrai jusqu'à 10^4 (pour la racine carrée)
+
+=== CONJECTURE (FAUSSE) 3 : si un terme a la même longueur que la racine, alors c'est le SEUL
+C'est FAUX : 81 , 9 , [8, 1]
+(mais ça a l'aur vrai dans la grande majorité des cas)
+
+
+=== ALGORITHME 1 :
+
+Semi-brute force : on teste toutes les combinaisons dont la longueur des termes sont <= la longueur de la racine. 
+On s'arrête quand la somme dépasse r.
+Le programme arrive à calculer T(10^10) = 499984803177 en 57.644s : il n'est malheureusement pas assez efficace pour calculer
+T(10^12) d'autant que la complexité semble très clairement exponentielle.
+
+=== ALGORITHME 2 :
+Pour tout nombre jusqu'à 7 chiffres, on stocke dans un dictionnaire ce nombre et on lui associe un set de toutes les additions qu'on peut faire avec. : IRREALISABLE
+
+=== IDEE :
+
+Essayons de comprendre comment décomposer 47255 intelligeamment.
+
+On a quatre décompositions de ce nombre en deux parties :
+
+4|7255
+47|255
+472|55
+4725|5
+
+Supposons qu'on connaisse la décomposition des parties de droite :
+
+7255 : [19, 37, 64, 82, 127, 262, 730, 7255]
+255  : [12, 30, 57, 255]
+55  : [10, 55]
+5    : [5]
+
+Alors il suffit d'additioner la partie de gauche avec les décompositions des parties de droite :
+
+4|7255 : [23, 41, 68, 86, 131, 266, 734, 7259]
+47|255 : [59, 77, 104, 302]
+472|55 : [482, 527]
+4725|5 : [4730]
+
+On fusionne tous ces tableaux, on ajoute le nombre de base (47255) et nous avons obtenu toutes ses décompositions :
+
+[23, 41, 59, 68, 77, 86, 104, 131, 266, 302, 482, 527, 734, 4730, 7259, 47255]
+
+=== THEOREME : Soit d(l) le nombre de décompositions d'un nombre de taille l>=2. Alors d(l) = 1+d(1)+...+d(l-1)
+
+=== THEOREME : d(l) = 2^(l-1) pour tout l>=1 (sans compter les éventuels doublons)
+
+Il faut donc en gros 2^(l-1) op élémentaires pour connaitre la décomposition d'un nombre de taille l.
+Donc il faut (10^l-10^(l-1))*2^(l-1) op élémentaires pour connaitre la décomposition de tous les nombres de taille l.
+Donc il faut op(k) := sum((10^l-10^(l-1))*2^(l-1),l,1,k) op élémentaires pour connaitre la décomposition de tous les entiers de taille comprise entre 1 et k.
+
+k op(k) Temps[s]
+1 9 2.506481409072876e-06
+2 189 5.263610959053039e-05
+3 3789 0.0010552286732196808
+4 75789 0.021107079945802687
+5 1515789 0.42214410539746283
+6 30315789 8.442884614430666
+7 606315789 168.85769479509472
+8 12126315789 3377.153898408376
+9 242526315789 67543.077970674
+10 4850526315789 1350861.5594159865
+11 97010526315789 27017231.188322235
+
+Bien sûr irréalisable, MAIS !! il ne faut regarder que les CARRES entre 1 et 11 chiffres.
+
+Cb y a-t-il de carrés parfaits à l chiffres ? En gros 10^(l/2)-10^((l-1)/2).
+Donc il faut (10^(l/2)-10^((l-1)/2))*2^(l-1) op élémentaires pour connaitre la décomposition de tous les carrés de taille l.
+Donc il faut op(k) := sum((10^(l/2)-10^((l-1)/2))*2^(l-1),l,1,k) op élémentaires pour connaitre la décomposition de tous les entiers de taille comprise entre 1 et k.
+
+k op(k) Temps[s]
+1 2 5.569958686828613e-07
+2 16 4.4559669494628904e-06
+3 102 2.8406789302825927e-05
+4 649 0.0001807451593875885
+5 4109 0.0011443480122089386
+6 25990 0.007238161313533783
+7 164375 0.045778097957372664
+8 1039604 0.2895275665330887
+9 6575035 1.8311336657226085
+10 41584173 11.581106281796693
+11 263001406 73.24534829989194
+
+Et bien ça semble presque passer !
+
+Faisons des tests...
+
+PREMIERE METHODE :
+N , T(N) , Temps [s]
+10^2 , 181 , 0
+10^3 , 181 , 0
+10^4 , 41333 , 0.001
+10^5 , 184767 , 0.009
+10^6 , 10804656 , 0.033
+10^7 , 30940313 , 0.198
+10^8 , 2818842841 , 0.593
+10^9 , 6222187932 , 8.83
+10^10 , 499984803177 , 57.291
+RAISON GEOMETRIQUE MOYENNE : 7.173
+
+SECONDE METHODE :
+N , T(N) , Temps [s]
+10^2 , 181 , 0
+10^3 , 181 , 0
+10^4 , 41333 , 0.001
+10^5 , 184767 , 0.003
+10^6 , 10804656 , 0.031
+10^7 , 30940313 , 0.089
+10^8 , 2818842841 , 0.543
+10^9 , 6222187932 , 3.21
+10^10 , 499984803177 , 19.405
+RAISON GEOMETRIQUE MOYENNE : 5.710
+
+REMARQUES :
+- Il est évident que 10^12 ne passera pas, mais on est pas loin du tout... (il devrait sortir en environ 2 minutes avec la seconde méthode)
+- La complexité est identique, mais le coefficient géométrique est drastiquement amorti.
+
+Découverte : si on part du haut au lieu du bas, ça va un peu plus vite :
+
+TROISIEME METHODE :
+10^9 , 6222187932 , 2.733
+10^10 , 499984803177 , 15.998
+
+On tente 10^12 (et puis merde...) : ça plante, je crois que la mémoire est tout simplement saturée.
+
+=== ALGORITHME 4 ===
+
+Cette fois on décompose sans retenir de manière intelligente : on garde des nombres de chiffres cohérents.
+
+N , T(N) , Temps [s]
+100 181 0.0
+1000 181 0.0
+10000 41333 0.001
+100000 184767 0.004
+1000000 10804656 0.029
+10000000 30940313 0.197
+100000000 2818842841 1.257
+10⁹ 6222187932 7.595
+
+==> C'est toujours mieux que la première méthode, mais moins que la seconde...
+
+THEOREME : Soit n<10^12 de longueur 2l. Alors au moins un terme de la décomposition doit être de longueur l-1.
+
+
+

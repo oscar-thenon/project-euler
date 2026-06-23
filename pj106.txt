@@ -1,0 +1,52 @@
+First 50% ! This one was so interesting.
+
+Let be $S$ a set of 12 integers. Firstly, one can figures out that if two subsets are equals, then according to the second rule, they must have the same cardinal. Besides, the elements are different so we don't need to check subsets of cardinal 1. Hence, we just have to check subsets of length 2, 3, 4, 5 and 6.
+
+Let's choose 4 elements of $S$ - there's ${12 \choose 4}=495$ ways to make them. There's 3 ways of making two subsets with these elements of size 2. Among these, it's relatively easy to see that only 1 can lead to an equality (see the spoiler below for details). Hence, there's $495\times 1=495$ sums to check choosing 4 elements.
+
+[collapse=Why only 1 out of 3 ?] If a<b<c<d then using transitivity we show that a+b<c+d and a+c<b+d, hence only the sums a+d and b+c could be equal.[/collapse]
+
+Similarly, let's choose now $k\in\{4,6,8,10,12\}$ elements of $S$ - there's ${12 \choose k}$ ways to make them. There's $\frac{1}{2}\times{k \choose k/2}$ ways of making two subsets with these elements of size $k/2$. Among these, we count how many of them - say $f(k)$ - can lead to an equality (spoiler below). Hence there's ${12 \choose k}\times f(k)$ sums to check choosing 4 elements.
+
+[collapse=How to get f(k)]We can generalize this idea of transitivity. Let's demonstrate this for a<b<c<d<e<f and let's prove that a+b+e<c+d+f. So there's two subsets here : {a,b,e} and {c,d,f}. If we associate 0 for the first set and 1 for the second, then 'abcdef' becomes '001101'. Now if the number we get begins with a 0, we remove the first 0 and the first 1 that appears and we continue like this. If it remains nothing, it means the transitivity works and a+b+e<c+d+f. But if at a certain point, the first digit is a 1, then the transitivity fails and we could possibly have a+b+e=c+d+f.
+- 001101 begins with a 0, we remove.
+- 0101   begins with a 0, we remove.
+- 01     begins with a 0, we remove.
+- Nothing left : hence a+b+e<c+d+f
+
+Now let's prove that a+b+f could possibly equals c+d+e. With 0s and 1s : '001110'.
+- 001110 begins with a 0, we remove.
+- 0110   begins with a 0, we remove.
+- 10     begins with a 1 : transitivity fails hence we could have a+b+f=c+d+e.
+
+Following this process, we can make a program that calculates f(k) (see the code bellow).[/collapse]
+
+[code=Python]from itertools import product
+
+def f(k):
+    fk = 0
+    for p in product([0,1],repeat=k):
+        if (p[0] == 0) and (p.count(0) == k//2) and (p.count(1) == k//2):
+            l = list(p)
+            for i in range(k//2):
+                if l[0] == 1:
+                    fk += 1
+                    break
+                else:
+                    l.remove(0)
+                    l.remove(1)
+    return fk
+
+print("k , f(k)")
+for k in range(4,13,2):
+    print(k," , ",f(k))
+[/code]
+
+k , 12 choose k , f(k) , Product
+4 , 495 , 1 , 495
+6 , 924 , 5 , 4620
+8 , 495 , 21 , 10395
+10 , 66 , 84 , 5544
+12 , 1 , 330 , 330
+
+The final answer is the sum of these products : 21384

@@ -1,0 +1,11 @@
+We can check integers $x^k$ and increment $x$. There's an obvious upper bound for $k$ : the number of digits of $x^k$ should be less than $x$.
+
+I did that for $x<100$ and I had a candidate for $a_{30}$ which is $C:=248155780267521$.
+
+(1) I continued to check for $x<10^7$ and there wasn't a better candidate. It's important to note that at this point we have a far better $k$ upper bound : $x^k$ should be less than $C$.
+
+(2) If $x\ge 10^7$, then $x^2$ has 16 digits or more: hence $x^k>C$ for all $k>1$. 
+
+By (1) and (2), $C$ is the answer.
+
+I don't have a code for the whole thing, but finding the candidate took no time, and (1) took less than 20 seconds I guess.

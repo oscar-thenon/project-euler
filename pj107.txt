@@ -1,0 +1,39 @@
+[code=Python]from math import inf
+
+""" === Importing network === """
+
+# N := number of vertices
+# network := imported matrix into a 2D-list, replacing '-' by 'inf'
+# W := weight of the original network
+
+"""=== Main program ==="""
+
+founds = {0} # Set of vertices we have met 
+foundl = [0] # Same but into a list
+
+def findmin():
+    """ Find the closest next vertice """
+    minweight, minweightind = inf,inf
+    for i in foundl:
+        for j in range(N):
+            if not (j in founds):
+                minweightcandidate = network[i][j]
+                if minweightcandidate < minweight:
+                    minweight = minweightcandidate
+                    minweightind = j
+    return (minweight,minweightind)
+
+w = 0 # Weight of the optimal network
+
+for i in range(N-1):
+    mw,mwi = findmin()
+    w += mw
+    founds.add(mwi)
+    foundl.append(mwi)
+
+print("Answer is",W-w)[/code]
+Execution time : 5ms
+
+It took me a while since I found the right point of view. If we call $S_1,...,S_k$ the vertices that we have already met, then we find $S_1',...,S_k'$, respectively the closest vertice from $S_1,...,S_k$ (we exclude $S_1,...,S_k$ themselves from this research because we don't want to go back to them). Then we move to the $S_i'$ which minimizes the distance from $S_i$.
+
+We continue until we have met all the vertices. At the beginning, we start from any vertice : it doesn't matter.

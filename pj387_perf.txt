@@ -1,0 +1,10 @@
+Performances pour calculer 
+les strong, right truncatable Harshad primes
+less than 10^4 (avg 10)
+
+Actuel :
+- 0.0023467540740966797
+
+Challenger :
+
+

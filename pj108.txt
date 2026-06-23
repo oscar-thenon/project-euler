@@ -1,0 +1,12 @@
+[code=Python]from sympy import divisor_count as dc
+n = 1
+while dc(n**2)//2+1 <= 10**3:
+    n += 1
+print(n)[/code]
+Execution time : 33.845s
+
+The equation is equivalent to $y=\dfrac{nx}{x-n}$. But if we center the curve in $(n,n)$, then we obtain another curve : $y=\dfrac{n^2}{x}$ which is far better : we just want this quotient to be an integer, so all we have to do is checking the number of divisors of $n^2$. For example, if $n=4$, then $n^2=16$ has $5$ divisors (1,2,4,8,16), but we only count the half of them (because of the symmetry) : so 3 divisors (1,2,4).
+
+So for any $n$, we just count the number of divisors $d(n^2)$ of $n^2$, then we check if $\left\lceil\dfrac{d(n^2)}{2}\right\rceil>1000$
+
+With the library 'sympy' and without any optimization it takes 5 lines. 33 seconds is definitely not fast, I don't know if it will be sufficient for #110, but for this one it is.

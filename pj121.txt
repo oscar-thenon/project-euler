@@ -1,0 +1,48 @@
+[code=Python]from itertools import product
+from fractions import Fraction
+from math import floor
+
+T = 15 # Number of turns
+it = product(['r','b'],repeat=T) # To generate all words "RBR..." of length 15
+t = T/2
+p = Fraction(0,1) # Probability of winning
+for i in it:
+    if i.count('b')>t: # This word leads to a win
+        paux = Fraction(1,1) # Probability for this word to occur
+        for (j,d) in enumerate(i):
+            if d == 'b':
+                paux *= Fraction(1,j+2)
+            else:
+                paux *= Fraction(j+1,j+2)
+        p += paux
+
+print(floor(1/p))[/code]
+Execution time : 1.086s
+
+In my opinion, the wording was unclear : "an extra red disc is added, and another disc is taken at random" could suggest that we take two discs at each turn and it took me a while to understand that it refers to the next turn.
+
+I was able to calculate explicitely the probability of winning after 15 turns by generating all words "RBBR..." of length 15, save only whose number of B is beyond 7, then calculate the probability that this word can occur. At the turn $n$, there's a probability of $\dfrac{1}{n+1}$ of taking a blue disc and $\dfrac{n}{n+1}$ to take a blue one.
+
+Then I found that the probability of winning at the end of the 15th turn is p=9219406943/20922789888000.
+
+Then if we call $X$ the random variable that counts how many money the player earns at the end of game, we have $P(X=-1)=1-p$ and $P(X=x-1)=p$ where $x$ is the prize allocated for winning. We want $E(X)\le 0$, so we solve this equation and we find $x\le 1/p$, giving the answer.
+
+Some other results :
+
+Number of turns , Probability of winning , Maximum prize allocated
+1 , 1/2 , 2
+2 , 1/6 , 6
+3 , 7/24 , 3
+4 , 11/120 , 10
+5 , 101/720 , 7
+6 , 197/5040 , 25
+7 , 2311/40320 , 17
+8 , 5119/362880 , 70
+9 , 73639/3628800 , 49
+10 , 177299/39916800 , 225
+11 , 37403/5913600 , 158
+12 , 286469/230630400 , 805
+13 , 153275513/87178291200 , 568
+14 , 408622073/1307674368000 , 3200
+15 , 9219406943/20922789888000 , 2269
+

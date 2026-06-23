@@ -1,0 +1,9 @@
+> Proof that $(a-1)^{2a+k}+(a+1)^{2a+k}\equiv (a-1)^{k}+(a+1)^{k} [a^2]$
+
+First, we note $S_e(a):=\sum\limits_{k=0}^a {2a\choose 2k}a^{2k}$ and $S_o(a):=\sum\limits_{k=0}^{a-1} {2a\choose 2k+1}a^{2k+1}$. By binomial expansion, it's easy to see that $(a-1)^{2a}=S_e(a)-S_o(a)$ and $(a+1)^{2a}=S_e(a)+S_o(a)$.
+
+Then it's easy to prove that $S_e(a)\equiv 1[a^2]$ and $S_o(a)\equiv 0[a^2]$.
+
+Hence $(a-1)^{2a}\equiv 1\equiv (a+1)^{2a}[a^2]$ and the claim follows.
+
+It's interesting to note that $n=a$ doesn't work because if $a$ is odd, there will be a problem with the parity of $(-1)^{a-k}$ when calculating $S_i(a)$. $n=a$ works only if $a$ is even, but whatever.
