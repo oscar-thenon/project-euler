@@ -1,6 +1,6 @@
 from sympy.ntheory import divisor_sigma as ds
 from math import inf
-from fonctions import sigma_range
+from src.fonctions import sigma_range
 
 s = sigma_range(10**6,True)
 

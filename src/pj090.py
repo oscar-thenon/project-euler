@@ -1,4 +1,4 @@
-from fonctions import combl
+from src.fonctions import combl
 
 def diceapp(l):
     dice.append(l)

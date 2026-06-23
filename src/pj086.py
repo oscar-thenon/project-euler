@@ -1,4 +1,4 @@
-from fonctions import pythagorean_triples_hypo
+from src.fonctions import pythagorean_triples_hypo
 
 # Importing Pythagorean primitive triples with hypothenuse < 4000
 tuples = pythagorean_triples_hypo(6708)

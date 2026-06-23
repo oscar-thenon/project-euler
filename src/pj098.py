@@ -3,7 +3,7 @@ words = ["A","ABILITY","ABLE","ABOUT","ABOVE","ABSENCE","ABSOLUTELY","ACADEMIC",
 """ We assume that words is the list of all words """
 
 from math import sqrt, ceil
-from fonctions import combinations # Personal library
+from src.fonctions import combinations # Personal library
 
 lw = len(words)
 

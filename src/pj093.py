@@ -1,4 +1,4 @@
-from fonctions import combl, arrangements, repetitions
+from src.fonctions import combl, arrangements, repetitions
 from math import inf
 
 # Setting all possible operations

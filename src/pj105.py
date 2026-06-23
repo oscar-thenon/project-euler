@@ -1,4 +1,4 @@
-from fonctions import combinations, import_tuples
+from src.fonctions import combinations, import_tuples
 
 sums = []
 
