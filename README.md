@@ -11,11 +11,11 @@ Problems up to 16 were solved in C++, then I switched to Python 2.7 until proble
 
 _N.B._ : This code was produced when I was not yet a computer science student. Many are awkward and could be greatly optimized, but I decided to leave everything as is.
 
-## Solved problems [133]
+## Solved problems [129]
 
-* 1-122
+* 1-109
+* 111-121
 * 144-145
-* 169
 * 206
 * 357
 * 387
@@ -23,4 +23,3 @@ _N.B._ : This code was produced when I was not yet a computer science student. M
 * 650
 * 684
 * 700
-* 719
