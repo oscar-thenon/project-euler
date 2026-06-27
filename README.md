@@ -1,3 +1,5 @@
+# My Project Euler solutions
+
 This repository contains the code for the problems from the famous [Project Euler](https://projecteuler.net/) that I have solved - or attempted to solve since 2019.
 
 Problems up to 16 were solved in C++, then I switched to Python 2.7 until problem 59 and finally Python 3+.
